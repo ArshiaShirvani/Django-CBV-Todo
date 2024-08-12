@@ -12,7 +12,7 @@ from django.shortcuts import redirect
 class UserCreateView(FormView):
     template_name = "register.html"
     form_class = UserCreationForm
-    success_url = "/login/"
+    success_url = "/accounts/login/"
 
     def form_valid(self, form):
         user = form.save()
