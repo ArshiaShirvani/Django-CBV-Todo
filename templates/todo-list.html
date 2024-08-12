@@ -29,7 +29,7 @@
   <body>
     <div class="container">
       <header class="text-center text-light my-4">
-        <h1 class="mb-4">Accounts</h1>
+        <h1 class="mb-4">{{request.user.username}}</h1>
         <h1 class="mb-4">Todo List</h1>
         <form class="search">
           <input
@@ -42,50 +42,22 @@
       </header>
 
       <ul class="list-group todos mx-auto text-light delete">
+        {% for task in tasks %}
         <li
           class="list-group-item d-flex justify-content-between align-items-center"
         >
-          <span>Go to the grocery</span>
+          <span>{{task.subject}}</span>
           
-          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Done</a></i>
+          <i><a href="{% url 'todo:updateview' pk=task.id %}">Edit</a> / <a href="{% url 'todo:deleteview' pk=task.id %}">Delete</a> / <a href="{% url 'todo:updateview' pk=task.id %}">Done</a></i>
         </li>
-
-        <li
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          <span>Do the Laundry</span>
-          <!-- <i class="far fa-trash-alt delete"></i> -->
-          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Done</a></i>
-        </li>
-
-        <li
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          <span>Walk the sdsd</span>
-          
-          
-          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Done</a></i>
-        </li>
-        <li
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          <span>Walk the sdsdsadasd</span>
-          
-          
-          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Done</a></i>
-        </li>
-        <li
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          <span>sdsd</span>
-          
-          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Done</a></i>
-        </li>
+        {% endfor %}
       </ul>
+      
 
-      <form class="add text-center my-4">
+      <form class="add text-center my-4" method="post" action="{% url 'todo:createview' %}">
+        {% csrf_token %}
         <label class="text-light">Add a new todo...</label>
-        <input class="form-control m-auto" type="text" name="add" />
+        <input class="form-control m-auto" type="text" name="subject"/>
         <br />
         <div class="text-center">
           <input type="submit" class="btn btn-light" /><br><br>

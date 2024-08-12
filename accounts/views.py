@@ -12,7 +12,7 @@ from django.shortcuts import redirect
 class UserCreateView(FormView):
     template_name = "register.html"
     form_class = UserCreationForm
-    success_url = "/accounts/login/"
+    success_url = "/"
 
     def form_valid(self, form):
         user = form.save()
@@ -26,4 +26,4 @@ class UserLoginView(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy("signup")
+        return reverse_lazy("")
