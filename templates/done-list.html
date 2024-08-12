@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1362334b71.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Libre+Franklin:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'todo/style.css' %}" />
+    <title>List</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="text-center text-light my-4">
+        <h1 class="mb-4">Accounts</h1>
+        <h1 class="mb-4">Done List</h1>
+        <form class="search">
+          <input
+            class="form-control m-auto"
+            type="text"
+            name="search"
+            placeholder="search todos"
+          />
+        </form>
+      </header>
+
+      <ul class="list-group todos mx-auto text-light delete">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Go to the grocery</span>
+          
+          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Back</a></i>
+        </li>
+
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Do the Laundry</span>
+          <!-- <i class="far fa-trash-alt delete"></i> -->
+          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Back</a></i>
+        </li>
+
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Walk the sdsd</span>
+          
+          
+          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Back</a></i>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Walk the sdsdsadasd</span>
+          
+          
+          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Back</a></i>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>sdsd</span>
+          
+          <i><a href="#">Edit</a> / <a href="#">Delete</a> / <a href="#">Back</a></i>
+        </li>
+      </ul>
+
+      <form class="add text-center my-4">
+        
+        <br />
+        <div class="text-center">
+          
+          <a class="ass" href="#">Todo List</a><br><br>
+          <a class="ass" href="#">Exit</a>
+        </div>
+      </form>
+    </div>
+    
+  </body>
+</html>
